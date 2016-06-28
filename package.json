@@ -10,7 +10,8 @@
   "author": "Alex LaFroscia",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "test": "mocha tests --recursive",
+    "test:debug": "mocha debug tests --recursive"
   },
   "dependencies": {
     "requireindex": "~1.1.0"
