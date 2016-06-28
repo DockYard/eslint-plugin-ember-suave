@@ -48,4 +48,8 @@ Then configure the rules you want to use under the rules section.
 
 
 
+## Development
 
+The provided [Yeoman generator](https://github.com/eslint/generator-eslint) should be used for creating rules.  In doing do, each rule will have a rule, documentation and test file created automatically.  All rules should be tested!
+
+Tests can be run using `npm test`.  If you want to debug your rules within Mocha, you can use `npm run test:debug` to step inside your tests.  Additionally, [AST Explorer](https://astexplorer.net/) is a great way to look into the structure of a node to determine what to expect.
