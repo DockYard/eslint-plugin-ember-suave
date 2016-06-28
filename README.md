@@ -1,6 +1,7 @@
-# eslint-plugin-ember-suave
-
+# eslint-plugin-ember-suave [![Build Status](https://travis-ci.org/alexlafroscia/eslint-plugin-ember-suave.svg?branch=master)](https://travis-ci.org/alexlafroscia/eslint-plugin-ember-suave)
 Make your Ember App Stylish
+
+**THIS PROJECT IS A WORK IN PROGRESS:** Ember Suave is being ported to ESLint, and this repo is porting the rules to the new platform.  See [this Github issue](https://github.com/DockYard/ember-suave/issues/113) for more information.
 
 ## Installation
 
