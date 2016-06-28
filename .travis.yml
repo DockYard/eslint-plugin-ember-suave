@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '4.4.3'
+
+before_install:
+  - npm install -g mocha
+
+install:
+  - npm install
+
+script:
+  - npm test
