@@ -42,12 +42,9 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
-## Supported Rules
+## Rules
 
-* Fill in provided rules here
-
-
-
+A list of supported rules and documentation can be found [here](docs/rules).
 
 ## Development
 
