@@ -23,24 +23,26 @@ ruleTester.run("no-direct-property-access", rule, {
   valid: [
     {
       code: "const { foo } = Ember;",
-      options: [["Ember", "DS"]],
       parserOptions: { ecmaVersion: 6 }
     },
     {
       code: "Ember.foo = 'bar';",
-      options: [["Ember", "DS"]]
     },
     {
       code: "const foo = bar.foo;",
-      options: [["Ember", "DS"]],
       parserOptions: { ecmaVersion: 6 }
     },
+    {
+      code: "const foo = DS.foo;",
+      options: [["Ember"]],
+      parserOptions: { ecmaVersion: 6 }
+    }
   ],
 
   invalid: [
     {
+      // Verify that the default config blocks `Ember` access
       code: "const foo = Ember.foo;",
-      options: [["Ember", "DS"]],
       parserOptions: { ecmaVersion: 6 },
       errors: [{
         message: "Avoid accessing Ember.foo directly",
@@ -48,11 +50,31 @@ ruleTester.run("no-direct-property-access", rule, {
       }]
     },
     {
+      // Verify that the default config blocks `DS` access
       code: "const foo = DS.foo;",
-      options: [["Ember", "DS"]],
       parserOptions: { ecmaVersion: 6 },
       errors: [{
         message: "Avoid accessing DS.foo directly",
+        type: "VariableDeclaration"
+      }]
+    },
+    {
+      // Verify that an empty array uses the default values
+      code: "const foo = DS.foo;",
+      options: [[]],
+      parserOptions: { ecmaVersion: 6 },
+      errors: [{
+        message: "Avoid accessing DS.foo directly",
+        type: "VariableDeclaration"
+      }]
+    },
+    {
+      // Verify that an arbitrary value can be provided
+      code: "const foo = Baz.foo;",
+      options: [["Baz"]],
+      parserOptions: { ecmaVersion: 6 },
+      errors: [{
+        message: "Avoid accessing Baz.foo directly",
         type: "VariableDeclaration"
       }]
     }

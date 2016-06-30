@@ -22,12 +22,22 @@ const { attr } = DS;
 
 ### Options
 
-The only configuration options are an array of variables to require destructuring from.  The recommended setting is simply:
+The only configuration option is an array of variables to require destructuring from.  If no configuration is provided, the following configuration will be used, protecting `Ember` and `DS`.
 
 ```json
 {
     "rules": {
         "no-direct-property-access": ["error", ["Ember", "DS"]]
+    }
+}
+```
+
+If you, for example, do not want to protect `DS`, or have another library that you want to protect from direct access, you can modify the array however you like:
+
+```json
+{
+    "rules": {
+        "no-direct-property-access": ["error", ["Ember", "Mirage"]]
     }
 }
 ```
