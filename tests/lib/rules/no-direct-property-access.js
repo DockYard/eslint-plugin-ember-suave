@@ -36,12 +36,6 @@ ruleTester.run("no-direct-property-access", rule, {
       code: "const foo = DS.foo;",
       options: [["Ember"]],
       parserOptions: { ecmaVersion: 6 }
-    },
-    {
-      // Verify that we don't break declaring a variable without assignment
-      code: "var foo;",
-      options: [["Ember"]],
-      parserOptions: { ecmaVersion: 6 }
     }
   ],
 
@@ -90,6 +84,16 @@ ruleTester.run("no-direct-property-access", rule, {
       code: "var foo; foo = Baz.foo;",
       options: [["Baz"]],
       parserOptions: { ecmaVersion: 6 },
+      errors: [{
+        message: "Avoid accessing Baz.foo directly",
+        type: "MemberExpression"
+      }]
+    },
+    {
+      // Verify protection in situations where there is no variable assignment
+      code: "export default Baz.foo();",
+      options: [["Baz"]],
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' },
       errors: [{
         message: "Avoid accessing Baz.foo directly",
         type: "MemberExpression"

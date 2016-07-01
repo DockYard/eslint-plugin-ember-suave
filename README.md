@@ -37,7 +37,10 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "ember-suave/rule-name": 2
+        "ember-suave/no-const-outside-module-scope": ["error"],
+        "ember-suave/no-direct-property-access": ["error"],
+        "ember-suave/require-access-in-comments": ["error"],
+        "ember-suave/require-const-for-ember-properties": ["error"]
     }
 }
 ```
