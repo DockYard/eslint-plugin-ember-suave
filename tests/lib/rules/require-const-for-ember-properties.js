@@ -22,7 +22,10 @@ ruleTester.run("require-const-for-ember-properties", rule, {
 
   valid: [
     { code: "const { foo } = Ember;", parserOptions: { ecmaVersion: 6 } },
-    { code: "const foo = Ember.foo;", parserOptions: { ecmaVersion: 6 } }
+    { code: "const foo = Ember.foo;", parserOptions: { ecmaVersion: 6 } },
+
+      // Verify that we don't break declaring a variable without assignment
+    { code: "var foo;", parserOptions: { ecmaVersion: 6 } }
   ],
 
   invalid: [
