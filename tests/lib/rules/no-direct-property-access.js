@@ -36,6 +36,12 @@ ruleTester.run("no-direct-property-access", rule, {
       code: "const foo = DS.foo;",
       options: [["Ember"]],
       parserOptions: { ecmaVersion: 6 }
+    },
+    {
+      // Verify that we don't break declaring a variable without assignment
+      code: "var foo;",
+      options: [["Ember"]],
+      parserOptions: { ecmaVersion: 6 }
     }
   ],
 
@@ -46,7 +52,7 @@ ruleTester.run("no-direct-property-access", rule, {
       parserOptions: { ecmaVersion: 6 },
       errors: [{
         message: "Avoid accessing Ember.foo directly",
-        type: "VariableDeclaration"
+        type: "MemberExpression"
       }]
     },
     {
@@ -55,7 +61,7 @@ ruleTester.run("no-direct-property-access", rule, {
       parserOptions: { ecmaVersion: 6 },
       errors: [{
         message: "Avoid accessing DS.foo directly",
-        type: "VariableDeclaration"
+        type: "MemberExpression"
       }]
     },
     {
@@ -65,7 +71,7 @@ ruleTester.run("no-direct-property-access", rule, {
       parserOptions: { ecmaVersion: 6 },
       errors: [{
         message: "Avoid accessing DS.foo directly",
-        type: "VariableDeclaration"
+        type: "MemberExpression"
       }]
     },
     {
@@ -75,7 +81,18 @@ ruleTester.run("no-direct-property-access", rule, {
       parserOptions: { ecmaVersion: 6 },
       errors: [{
         message: "Avoid accessing Baz.foo directly",
-        type: "VariableDeclaration"
+        type: "MemberExpression"
+      }]
+    },
+    {
+      // Verify that accessing a property directly to assign to an
+      // already-declared variable is also caught
+      code: "var foo; foo = Baz.foo;",
+      options: [["Baz"]],
+      parserOptions: { ecmaVersion: 6 },
+      errors: [{
+        message: "Avoid accessing Baz.foo directly",
+        type: "MemberExpression"
       }]
     }
   ]
