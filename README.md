@@ -21,21 +21,25 @@ $ npm install eslint-plugin-ember-suave --save-dev
 
 ## Usage
 
-Add `ember-suave` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+There are a few ways to add the rules from `ember-suave` to your ESLint project.  The easiest way is to extend your configuration from the one provided, like so:
+
+```json
+{
+    "extends": [
+        "./node_modules/ember-cli-eslint/coding-standard/ember-application.js",
+        "plugin:ember-suave/recommended"
+    ]
+}
+```
+
+Note that the first extension is placed there by default by `ember-cli-eslint`; you might not have it if you're not using that plugin, or if you've decided not to take their presets.  Once you've extended from the recommended settings, you can turn them off or configure them as you like.
+If you want more control over your linting, or would prefer adding rules one at a time, you can also include the plugin manually and individually enable rules.  Add `ember-suave` to the `plugins` section of your `.eslintrc` configuration file, and then configure individual rules under the `rules` section.  Note that rules will be disabled by default; you'll need to turn on each one that you want to use.
 
 ```json
 {
     "plugins": [
         "ember-suave"
-    ]
-}
-```
-
-
-Then configure the rules you want to use under the rules section.
-
-```json
-{
+    ],
     "rules": {
         "ember-suave/no-const-outside-module-scope": ["error"],
         "ember-suave/no-direct-property-access": ["error"],
@@ -44,6 +48,8 @@ Then configure the rules you want to use under the rules section.
     }
 }
 ```
+
+Details about rules and their configuration options are provided below.
 
 ## Rules
 
