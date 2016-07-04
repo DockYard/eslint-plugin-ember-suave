@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 var rule = require("../../../lib/rules/no-const-outside-module-scope"),
-  MESSAGE = require("../../../lib/rules/no-const-outside-module-scope").message,
+  MESSAGE = require("../../../lib/rules/no-const-outside-module-scope").meta.message,
 
   codeBlock = require("../../helpers").codeBlock,
 

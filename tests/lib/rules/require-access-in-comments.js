@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 var rule = require("../../../lib/rules/require-access-in-comments"),
-  MESSAGE = require("../../../lib/rules/require-access-in-comments").message,
+  MESSAGE = require("../../../lib/rules/require-access-in-comments").meta.message,
 
   codeBlock = require("../../helpers").codeBlock,
 
