@@ -7,7 +7,9 @@ module.exports = {
   rules: {
     // Built-in Rules
     'no-empty': 'error',
-    'brace-style': 'error',
+    'brace-style': ['error', '1tbs', {
+      'allowSingleLine': false
+    }],
     'no-multiple-empty-lines': 'error',
     'one-var': ['error', {
       'uninitialized': 'always',
@@ -44,19 +46,7 @@ module.exports = {
     'arrow-parens': 'error',
     'semi': ['error', 'always'],
     'space-infix-ops': 'error',
-    'keyword-spacing': ['error', {
-      'overrides': {
-        'else': {
-          'before': true
-        },
-        'while': {
-          'before': true
-        },
-        'catch': {
-          'before': true
-        }
-      }
-    }],
+    'keyword-spacing': 'error',
     'spaced-comment': ['error', 'always'],
     'space-before-blocks': ['error', 'always'],
     'array-bracket-spacing': ['error', 'always'],
