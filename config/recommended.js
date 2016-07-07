@@ -62,6 +62,10 @@ module.exports = {
     // Ember Suave rules
     'ember-suave/no-const-outside-module-scope': 'error',
     'ember-suave/no-direct-property-access': 'error',
+    'ember-suave/prefer-destructuring': ['error', {
+      array: true,
+      object: true
+    }],
     'ember-suave/require-access-in-comments': 'error',
     'ember-suave/require-const-for-ember-properties': 'error'
   }

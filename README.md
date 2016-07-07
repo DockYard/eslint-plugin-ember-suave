@@ -41,10 +41,11 @@ If you want more control over your linting, or would prefer adding rules one at 
         "ember-suave"
     ],
     "rules": {
-        "ember-suave/no-const-outside-module-scope": ["error"],
-        "ember-suave/no-direct-property-access": ["error"],
-        "ember-suave/require-access-in-comments": ["error"],
-        "ember-suave/require-const-for-ember-properties": ["error"]
+        "ember-suave/no-const-outside-module-scope": "error",
+        "ember-suave/no-direct-property-access": "error",
+        "ember-suave/prefer-destructuring": "error",
+        "ember-suave/require-access-in-comments": "error",
+        "ember-suave/require-const-for-ember-properties": "error"
     }
 }
 ```
