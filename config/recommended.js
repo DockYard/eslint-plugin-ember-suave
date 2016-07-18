@@ -10,7 +10,9 @@ module.exports = {
     'brace-style': ['error', '1tbs', {
       'allowSingleLine': false
     }],
-    'no-multiple-empty-lines': 'error',
+    'no-multiple-empty-lines': ['error', {
+      'max': 1
+    }],
     'one-var': ['error', {
       'uninitialized': 'always',
       'initialized': 'never'
