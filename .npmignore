@@ -1,3 +1,4 @@
 # Prevent downloading docs or tests
 docs/
 tests/
+.travis.yml
