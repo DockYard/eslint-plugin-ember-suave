@@ -6,60 +6,60 @@ module.exports = {
   ],
   rules: {
     // Built-in Rules
-    'no-empty': 'error',
+    'array-bracket-spacing': ['error', 'always'],
+    'arrow-parens': 'error',
     'brace-style': ['error', '1tbs', {
       'allowSingleLine': false
     }],
+    'camelcase': ['error', {
+      'properties': 'never'
+    }],
+    'comma-dangle': ['error', 'never'],
+    'comma-style': ['error', 'last'],
+    'curly': ['error', 'all'],
+    'dot-notation': 'error',
+    'indent': ['error', 2, {
+      'SwitchCase': 1
+    }],
+    'key-spacing': ['error', {
+      'beforeColon': false,
+      'afterColon': true
+    }],
+    'keyword-spacing': 'error',
+    'newline-after-var': ['error', 'always'],
+    'new-cap': 'error',
+    'no-empty': 'error',
     'no-multiple-empty-lines': ['error', {
       'max': 1
     }],
+    'no-spaced-func': 'error',
+    'no-trailing-spaces': 'error',
+    'no-var': 'error',
+    'object-shorthand': 'error',
     'one-var': ['error', {
       'uninitialized': 'always',
       'initialized': 'never'
     }],
     'operator-linebreak': ['error', 'before'],
-    'key-spacing': ['error', {
-      'beforeColon': false,
-      'afterColon': true
-    }],
-    'space-unary-ops': ['error', {
-      'words': false,
-      'nonwords': false
+    'semi': ['error', 'always'],
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
+    'quotes': ['error', 'single', {
+      'avoidEscape': true
     }],
     'semi-spacing': ['error', {
       'before': false,
       'after': true
     }],
+    'space-before-blocks': ['error', 'always'],
     'space-before-function-paren': ['error', 'never'],
     'space-in-parens': ['error', 'never'],
-    'no-spaced-func': 'error',
-    'comma-dangle': ['error', 'never'],
-    'no-trailing-spaces': 'error',
-    'no-var': 'error',
-    'camelcase': ['error', {
-      'properties': 'never'
-    }],
-    'new-cap': 'error',
-    'comma-style': ['error', 'last'],
-    'curly': ['error', 'all'],
-    'dot-notation': 'error',
-    'object-shorthand': 'error',
-    'newline-after-var': ['error', 'always'],
-    'arrow-parens': 'error',
-    'semi': ['error', 'always'],
     'space-infix-ops': 'error',
-    'keyword-spacing': 'error',
+    'space-unary-ops': ['error', {
+      'words': false,
+      'nonwords': false
+    }],
     'spaced-comment': ['error', 'always'],
-    'space-before-blocks': ['error', 'always'],
-    'array-bracket-spacing': ['error', 'always'],
-    'prefer-spread': 'error',
-    'prefer-template': 'error',
-    'indent': ['error', 2, {
-      'SwitchCase': 1
-    }],
-    'quotes': ['error', 'single', {
-      'avoidEscape': true
-    }],
 
     // Ember Suave rules
     'ember-suave/no-const-outside-module-scope': 'error',
