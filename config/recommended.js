@@ -1,6 +1,15 @@
 'use strict';
 
 module.exports = {
+  root: true,
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module'
+  },
+  parser: 'babel-eslint',
+  env: {
+    'browser': true
+  },
   plugins: [
     'ember-suave'
   ],
