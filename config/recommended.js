@@ -41,12 +41,12 @@ module.exports = {
       'initialized': 'never'
     }],
     'operator-linebreak': ['error', 'before'],
-    'semi': ['error', 'always'],
     'prefer-spread': 'error',
     'prefer-template': 'error',
     'quotes': ['error', 'single', {
       'avoidEscape': true
     }],
+    'semi': ['error', 'always'],
     'semi-spacing': ['error', {
       'before': false,
       'after': true
