@@ -28,6 +28,7 @@ module.exports = {
     'comma-style': ['error', 'last'],
     'curly': ['error', 'all'],
     'dot-notation': 'error',
+    'dot-location': ['error', 'property'],
     'generator-star-spacing': ['error', {'before': false}],
     'indent': ['error', 2, {
       'SwitchCase': 1
@@ -47,7 +48,7 @@ module.exports = {
     'no-trailing-spaces': 'error',
     'no-var': 'error',
     'object-curly-spacing': ['error', 'always'],
-    'object-shorthand': 'error',
+    'object-shorthand': ['error', 'always'],
     'one-var': ['error', {
       'uninitialized': 'always',
       'initialized': 'never'
