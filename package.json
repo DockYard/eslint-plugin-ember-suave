@@ -10,14 +10,16 @@
   "author": "Alex LaFroscia",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive",
-    "test:debug": "mocha debug tests --recursive"
+    "test": "mocha tests tests/lib/rules/*.js tests/config/*.js"
   },
   "dependencies": {
+    "babel-eslint": "^6.1.2",
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
-    "eslint": "~2.6.0"
+    "chai": "^3.5.0",
+    "eslint": "^3.0.0",
+    "mocha": "^2.5.3"
   },
   "engines": {
     "node": ">=0.10.0"
