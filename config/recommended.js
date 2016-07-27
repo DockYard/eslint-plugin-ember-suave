@@ -24,6 +24,7 @@ module.exports = {
       'properties': 'never'
     }],
     'comma-dangle': ['error', 'never'],
+    'comma-spacing': ['error', { 'before': false, 'after': true }],
     'comma-style': ['error', 'last'],
     'curly': ['error', 'all'],
     'dot-notation': 'error',
