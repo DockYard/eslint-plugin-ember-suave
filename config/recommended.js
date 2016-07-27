@@ -21,7 +21,7 @@ module.exports = {
       'allowSingleLine': false
     }],
     'camelcase': ['error', {
-      'properties': 'never'
+      'properties': 'always'
     }],
     'comma-dangle': ['error', 'never'],
     'comma-spacing': ['error', { 'before': false, 'after': true }],

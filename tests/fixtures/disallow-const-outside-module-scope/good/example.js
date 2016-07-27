@@ -1,4 +1,5 @@
 const foo = 'blah';
+
 export const bar = 'derp';
 
 function something() {
