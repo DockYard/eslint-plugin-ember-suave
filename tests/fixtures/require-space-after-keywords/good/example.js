@@ -21,7 +21,7 @@ switch (x) {
 
 try {
   x();
-} catch(error) {
+} catch (error) {
   console.log(error);
 }
 
@@ -29,4 +29,4 @@ function foo() {
   return { a: 'abc' };
 }
 
-console.log(typeof ['a', 'b'] === 'object');
+console.log(typeof [ 'a', 'b' ] === 'object');
