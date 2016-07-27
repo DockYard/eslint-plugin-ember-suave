@@ -16,7 +16,7 @@ module.exports = {
   rules: {
     // Built-in Rules
     'array-bracket-spacing': ['error', 'always'],
-    'arrow-parens': 'error',
+    'arrow-parens': ['error', 'always'],
     'brace-style': ['error', '1tbs', {
       'allowSingleLine': false
     }],
@@ -28,6 +28,7 @@ module.exports = {
     'comma-style': ['error', 'last'],
     'curly': ['error', 'all'],
     'dot-notation': 'error',
+    'generator-star-spacing': ['error', {'before': false}],
     'indent': ['error', 2, {
       'SwitchCase': 1
     }],
@@ -35,7 +36,7 @@ module.exports = {
       'beforeColon': false,
       'afterColon': true
     }],
-    'keyword-spacing': 'error',
+    'keyword-spacing': ['error', {'after': true, 'before': true}],
     'newline-after-var': ['error', 'always'],
     'new-cap': 'error',
     'no-empty': 'error',
