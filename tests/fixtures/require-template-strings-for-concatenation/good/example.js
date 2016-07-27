@@ -3,5 +3,5 @@ let bar = `${foo} stuff`;
 
 foo(`${bar}-${foo}`);
 
-let reallyLong = 'asdfadfdsfasdfadfadfasdf' +
-      'adsfasdf';
+let reallyLong = 'asdfadfdsfasdfadfadfasdf'
+    +  'adsfasdf';

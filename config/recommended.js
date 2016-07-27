@@ -46,6 +46,7 @@ module.exports = {
     }],
     'no-spaced-func': 'error',
     'no-trailing-spaces': 'error',
+    'no-useless-concat': 'error',
     'no-var': 'error',
     'object-curly-spacing': ['error', 'always'],
     'object-shorthand': ['error', 'always'],
