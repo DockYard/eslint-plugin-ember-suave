@@ -29,4 +29,4 @@ function foo() {
   return { a: 'abc' };
 }
 
-console.log(typeof [ 'a', 'b' ] === 'object');
+console.log(typeof ['a', 'b'] === 'object');

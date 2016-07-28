@@ -15,7 +15,7 @@ module.exports = {
   ],
   rules: {
     // Built-in Rules
-    'array-bracket-spacing': ['error', 'always'],
+    'array-bracket-spacing': ['error', 'never'],
     'arrow-parens': ['error', 'always'],
     'brace-style': ['error', '1tbs', {
       'allowSingleLine': false
