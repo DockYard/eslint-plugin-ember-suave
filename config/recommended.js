@@ -39,7 +39,6 @@ module.exports = {
     }],
     'keyword-spacing': ['error', {'after': true, 'before': true}],
     'max-statements-per-line': ['error', { 'max': 1 }],
-    'newline-after-var': ['error', 'always'],
     'new-cap': 'error',
     'no-empty': 'error',
     'no-multiple-empty-lines': ['error', {
