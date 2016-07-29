@@ -21,7 +21,7 @@ switch (x) {
 
 try {
   x();
-} catch (error) {
+} catch(error) {
   console.log(error);
 }
 

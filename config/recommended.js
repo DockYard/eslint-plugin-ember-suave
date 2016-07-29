@@ -37,7 +37,7 @@ module.exports = {
       'beforeColon': false,
       'afterColon': true
     }],
-    'keyword-spacing': ['error', {'after': true, 'before': true}],
+    'keyword-spacing': ['error', {'overrides': {'catch': {'after': false}}}],
     'max-statements-per-line': ['error', { 'max': 1 }],
     'new-cap': 'error',
     'no-empty': 'error',

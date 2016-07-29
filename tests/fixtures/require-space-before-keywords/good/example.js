@@ -10,6 +10,6 @@ do {
 
 try {
   x();
-} catch (error) {
+} catch(error) {
   console.log(error);
 }
