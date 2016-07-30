@@ -1,20 +1,24 @@
 {
   "name": "eslint-plugin-ember-suave",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Make your Ember App Stylish",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "Alex LaFroscia",
+  "author": "DockYard <oss@dockyard.com>",
   "contributors": [
+    {
+      "name": "Alex LaFroscia"
+    },
     {
       "name": "Robert Wagner",
       "email": "rwwagner90@gmail.com",
       "url": "https://github.com/rwwagner90"
     }
   ],
+  "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests tests/lib/rules/*.js tests/config/*.js"
