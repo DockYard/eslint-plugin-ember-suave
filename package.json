@@ -8,6 +8,13 @@
     "eslint-plugin"
   ],
   "author": "Alex LaFroscia",
+  "contributors": [
+    {
+      "name": "Robert Wagner",
+      "email": "rwwagner90@gmail.com",
+      "url": "https://github.com/rwwagner90"
+    }
+  ],
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests tests/lib/rules/*.js tests/config/*.js"

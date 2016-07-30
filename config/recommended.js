@@ -15,18 +15,21 @@ module.exports = {
   ],
   rules: {
     // Built-in Rules
-    'array-bracket-spacing': ['error', 'always'],
-    'arrow-parens': 'error',
+    'array-bracket-spacing': ['error', 'never'],
+    'arrow-parens': ['error', 'always'],
     'brace-style': ['error', '1tbs', {
       'allowSingleLine': false
     }],
     'camelcase': ['error', {
-      'properties': 'never'
+      'properties': 'always'
     }],
     'comma-dangle': ['error', 'never'],
+    'comma-spacing': ['error', { 'before': false, 'after': true }],
     'comma-style': ['error', 'last'],
     'curly': ['error', 'all'],
     'dot-notation': 'error',
+    'dot-location': ['error', 'property'],
+    'generator-star-spacing': ['error', {'before': false}],
     'indent': ['error', 2, {
       'SwitchCase': 1
     }],
@@ -34,8 +37,8 @@ module.exports = {
       'beforeColon': false,
       'afterColon': true
     }],
-    'keyword-spacing': 'error',
-    'newline-after-var': ['error', 'always'],
+    'keyword-spacing': ['error', {'overrides': {'catch': {'after': false}}}],
+    'max-statements-per-line': ['error', { 'max': 1 }],
     'new-cap': 'error',
     'no-empty': 'error',
     'no-multiple-empty-lines': ['error', {
@@ -43,8 +46,10 @@ module.exports = {
     }],
     'no-spaced-func': 'error',
     'no-trailing-spaces': 'error',
+    'no-useless-concat': 'error',
     'no-var': 'error',
-    'object-shorthand': 'error',
+    'object-curly-spacing': ['error', 'always'],
+    'object-shorthand': ['error', 'always'],
     'one-var': ['error', {
       'uninitialized': 'always',
       'initialized': 'never'
