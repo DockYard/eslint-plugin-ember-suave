@@ -26,7 +26,6 @@ There are a few ways to add the rules from `ember-suave` to your ESLint project.
 ```json
 {
     "extends": [
-        "./node_modules/ember-cli-eslint/coding-standard/ember-application.js",
         "plugin:ember-suave/recommended"
     ]
 }
@@ -61,3 +60,24 @@ A list of supported rules and documentation can be found [here](docs/rules).
 The provided [Yeoman generator](https://github.com/eslint/generator-eslint) should be used for creating rules.  In doing do, each rule will have a rule, documentation and test file created automatically.  All rules should be tested!
 
 Tests can be run using `npm test`.  If you want to debug your rules within Mocha, you can use `npm run test:debug` to step inside your tests.  Additionally, [AST Explorer](https://astexplorer.net/) is a great way to look into the structure of a node to determine what to expect.
+
+## Authors
+
+* [Alex LaFroscia](https://github.com/alexlafroscia)
+* [Estelle DeBlois](https://github.com/brzpegasus)
+
+## Contributors
+
+* [Robert Wagner](https://github.com/rwwagner90)
+
+## Versioning
+
+This library follows [Semantic Versioning](http://semver.org)
+
+## Legal
+
+[DockYard](http://dockyard.com/), Inc. &copy; 2016
+
+[@dockyard](http://twitter.com/dockyard)
+
+[Licensed under the MIT license](http://www.opensource.org/licenses/mit-license.php)
