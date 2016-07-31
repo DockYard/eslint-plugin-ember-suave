@@ -47,6 +47,11 @@ ruleTester.run("prefer-destructuring", rule, {
       code: "var foo = object['foo'];",
       options: [{ object: false }],
       parserOptions: { ecmaVersion: 6 }
+    },
+    {
+      code: "var { foo: bar } = object;",
+      options: [{ object: false }],
+      parserOptions: { ecmaVersion: 6 }
     }
   ],
 
@@ -73,6 +78,14 @@ ruleTester.run("prefer-destructuring", rule, {
       errors: [{
         message: "Use object destructuring",
         type: "VariableDeclarator"
+      }]
+    },
+    {
+      code: "let { foo: foo } = object;",
+      parserOptions: { ecmaVersion: 6 },
+      errors: [{
+        message: "Unnecessary duplicate variable name",
+        type: "Property"
       }]
     }
   ]
