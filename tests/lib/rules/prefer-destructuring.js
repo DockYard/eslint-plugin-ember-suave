@@ -38,6 +38,10 @@ ruleTester.run("prefer-destructuring", rule, {
       parserOptions: { ecmaVersion: 6 }
     },
     {
+      code: "var foo = object['bar'];",
+      parserOptions: { ecmaVersion: 6 }
+    },
+    {
       code: "var foo = array[0];",
       options: [{ array: false }],
       parserOptions: { ecmaVersion: 6 }
