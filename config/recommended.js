@@ -39,7 +39,17 @@ module.exports = {
     }],
     'keyword-spacing': ['error', {'overrides': {'catch': {'after': false}}}],
     'max-statements-per-line': ['error', { 'max': 1 }],
-    'new-cap': 'error',
+    'new-cap': ['error', {
+      // Lower-case variables that can be used with `new`
+      'newIsCapExceptions': [
+        'hash' // RSVP.hash
+      ],
+      // Capital variables that can be used without `new`
+      'capIsNewExceptions': [
+        'A', // Ember.A
+        'Deferred' // $.Deferred
+      ]
+    }],
     'no-empty': 'error',
     'no-multiple-empty-lines': ['error', {
       'max': 1
