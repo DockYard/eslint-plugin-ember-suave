@@ -5,19 +5,24 @@ Make your Ember App Stylish
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org):
+### Getting Started in Ember
 
-```
-$ npm i eslint --save-dev
-```
+You'll first need to install [ember-cli-eslint](https://github.com/ember-cli/ember-cli-eslint) and `eslint-plugin-ember-suave`:
 
-Next, install `eslint-plugin-ember-suave`:
-
-```
-$ npm install eslint-plugin-ember-suave --save-dev
+```bash
+ember install ember-cli-elsint
+npm install --save-dev eslint-plugin-ember-suave
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-ember-suave` globally.
+Then, update the `.eslintrc.js` file to extend the recommended configuration (see the [Usage section below](#usage)).
+
+### Working with Editors and the CLI
+
+If you use ESLint in an editor, or from the command line, you'll need to install `eslint-plugin-ember-suave` globally too.
+
+```bash
+npm install --global eslint-plugin-ember-suave
+```
 
 ## Usage
 
