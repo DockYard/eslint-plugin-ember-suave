@@ -10,7 +10,7 @@ Make your Ember App Stylish
 You'll first need to install [ember-cli-eslint](https://github.com/ember-cli/ember-cli-eslint) and `eslint-plugin-ember-suave`:
 
 ```bash
-ember install ember-cli-elsint
+ember install ember-cli-eslint
 npm install --save-dev eslint-plugin-ember-suave
 ```
 
