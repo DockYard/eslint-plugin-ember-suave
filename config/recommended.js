@@ -6,7 +6,6 @@ module.exports = {
     ecmaVersion: 6,
     sourceType: 'module'
   },
-  parser: 'babel-eslint',
   env: {
     'browser': true
   },
