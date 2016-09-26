@@ -22,16 +22,9 @@ describe('plugin:ember-suave/recommended', function() {
 
   var fixturesDir = path.resolve(__dirname, '../fixtures');
   var fixtures = fs.readdirSync(fixturesDir);
-  var skipped = [
-    'disallow-spaces-in-generator'
-  ];
 
   fixtures.forEach(function(fixture) {
     describe(fixture, function() {
-      if (skipped.indexOf(fixture) != -1) {
-        return;
-      }
-
       var goodFilesDir = path.join(fixturesDir, fixture, 'good');
       var badFilesDir = path.join(fixturesDir, fixture, 'bad');
 

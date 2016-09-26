@@ -28,7 +28,7 @@ module.exports = {
     'curly': ['error', 'all'],
     'dot-notation': 'error',
     'dot-location': ['error', 'property'],
-    'generator-star-spacing': ['error', {'before': false}],
+    'generator-star-spacing': ['error', {'before': false, 'after': true}],
     'indent': ['error', 2, {
       'SwitchCase': 1
     }],
