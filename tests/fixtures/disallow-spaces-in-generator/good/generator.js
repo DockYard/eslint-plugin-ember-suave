@@ -1,3 +1,3 @@
 function* foo() {}
 
-let bar = function*() {};
+let bar = function* () {};
