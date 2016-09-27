@@ -1,70 +1,85 @@
-# eslint-plugin-ember-suave [![Build Status](https://travis-ci.org/DockYard/eslint-plugin-ember-suave.svg?branch=master)](https://travis-ci.org/DockYard/eslint-plugin-ember-suave)
-Make your Ember App Stylish
+# eslint-plugin-ember-suave
 
-**THIS PROJECT IS A WORK IN PROGRESS:** Ember Suave is being ported to ESLint, and this repo is porting the rules to the new platform.  See [this Github issue](https://github.com/DockYard/ember-suave/issues/113) for more information.
+[![Build Status](https://travis-ci.org/DockYard/eslint-plugin-ember-suave.svg?branch=master)](https://travis-ci.org/DockYard/eslint-plugin-ember-suave)
 
-## Installation
+This ESLint plugin exports custom linting rules and a `recommended` configuration based on [DockYard's styleguide](https://github.com/DockYard/styleguides/tree/master/engineering). It is tailored for Ember apps specifically, and may be used in conjunction with [ember-cli-eslint](https://github.com/ember-cli/ember-cli-eslint), or with the ESLint [CLI](http://eslint.org/docs/user-guide/command-line-interface).
 
-### Getting Started in Ember
+## Using the plugin with Ember CLI
 
-You'll first need to install [ember-cli-eslint](https://github.com/ember-cli/ember-cli-eslint) and `eslint-plugin-ember-suave`:
+### Installation
+
+Install the plugin as a dev dependency in your Ember CLI project.
 
 ```bash
-ember install ember-cli-eslint
 npm install --save-dev eslint-plugin-ember-suave
 ```
 
-Then, update the `.eslintrc.js` file to extend the recommended configuration (see the [Usage section below](#usage)).
+This will make the plugin available to ESLint.
 
-### Working with Editors and the CLI
-
-If you use ESLint in an editor, or from the command line, you'll need to install `eslint-plugin-ember-suave` globally too.
+Next, install the [ember-cli-eslint](https://github.com/ember-cli/ember-cli-eslint) addon so that your app can be linted during development and testing. _This will also uninstall [ember-cli-jshint](https://github.com/ember-cli/ember-cli-jshint) since there is no need to have both linters running at the same time._
 
 ```bash
-npm install --global eslint-plugin-ember-suave
+ember install ember-cli-eslint
 ```
 
-## Usage
+### Configuration
 
-There are a few ways to add the rules from `ember-suave` to your ESLint project.  The easiest way is to extend your configuration from the one provided, like so:
+The `ember-cli-eslint` addon blueprint generates a `.eslintrc.js` configuration file at the root of the project. By default, it is set to extend ESLint's recommended subset of [core linting rules](http://eslint.org/docs/rules/).
 
-```json
-{
-    "extends": [
-        "plugin:ember-suave/recommended"
-    ]
-}
+Add the plugin's
+[`recommended`](https://github.com/DockYard/eslint-plugin-ember-suave/blob/master/config/recommended.js) configuration to the list of extensions:
+
+```js
+// .eslintrc.js
+
+module.exports = {
+  // ...
+  extends: [
+    'eslint:recommended',
+    'plugin:ember-suave/recommended'
+  ],
+  rules: {
+  }
+};
 ```
 
-Note that the first extension is placed there by default by `ember-cli-eslint`; you might not have it if you're not using that plugin, or if you've decided not to take their presets.  Once you've extended from the recommended settings, you can turn them off or configure them as you like.
-If you want more control over your linting, or would prefer adding rules one at a time, you can also include the plugin manually and individually enable rules.  Add `ember-suave` to the `plugins` section of your `.eslintrc` configuration file, and then configure individual rules under the `rules` section.  Note that rules will be disabled by default; you'll need to turn on each one that you want to use.
+### Overriding Rules
 
-```json
-{
-    "plugins": [
-        "ember-suave"
-    ],
-    "rules": {
-        "ember-suave/no-const-outside-module-scope": "error",
-        "ember-suave/no-direct-property-access": "error",
-        "ember-suave/prefer-destructuring": "error",
-        "ember-suave/require-access-in-comments": "error",
-        "ember-suave/require-const-for-ember-properties": "error"
-    }
-}
+Both core rules (provided by ESLint) and custom rules (prefixed by `ember-suave/`) from the plugin's `recommended` configuration can be turned off or modified, if desired.
+
+```js
+// .eslintrc.js
+
+module.exports = {
+  // ...
+  extends: [
+    'eslint:recommended',
+    'plugin:ember-suave/recommended'
+  ],
+  rules: {
+    'quotes': ['error', 'double'],
+    'ember-suave/no-const-outside-module-scope': 'off'
+  }
+};
 ```
 
-Details about rules and their configuration options are provided below.
+## Working with Editors and the CLI
+
+If you use ESLint in an editor or from the command line, you'll need to install `eslint-plugin-ember-suave` globally too.
+
+```bash
+npm install -g eslint-plugin-ember-suave
+```
 
 ## Rules
 
-A list of supported rules and documentation can be found [here](docs/rules).
+A list of custom rules and documentation can be found [here](docs/rules).
 
 ## Development
 
 The provided [Yeoman generator](https://github.com/eslint/generator-eslint) should be used for creating rules.  In doing do, each rule will have a rule, documentation and test file created automatically.  All rules should be tested!
 
-Tests can be run using `npm test`.  If you want to debug your rules within Mocha, you can use `npm run test:debug` to step inside your tests.  Additionally, [AST Explorer](https://astexplorer.net/) is a great way to look into the structure of a node to determine what to expect.
+Tests can be run using `npm test`.  Additionally, [AST Explorer](https://astexplorer.net/) is a great way to look into the structure of a node to determine what to expect.
 
 ## Authors
 
