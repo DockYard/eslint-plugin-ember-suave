@@ -1,9 +1,12 @@
 language: node_js
 node_js:
-- '4.4.3'
+  - '4'
+  - '6'
+  - 'stable'
 
-before_install:
-  - npm install -g mocha
+cache:
+  directories:
+    - $HOME/.npm
 
 install:
   - npm install
