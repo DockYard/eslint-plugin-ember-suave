@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-ember-suave",
-  "version": "0.1.2",
-  "description": "Make your Ember App Stylish",
+  "version": "1.0.0",
+  "description": "DockYard's ESLint plugin for Ember apps",
   "keywords": [
     "eslint",
     "eslintplugin",
