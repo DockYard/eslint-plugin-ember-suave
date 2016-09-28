@@ -2,58 +2,45 @@
  * @fileoverview Do not allow `const` outside of a module
  * @author Alex LaFroscia
  */
-"use strict";
+'use strict';
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
-var rule = require("../../../lib/rules/no-const-outside-module-scope"),
-  MESSAGE = require("../../../lib/rules/no-const-outside-module-scope").meta.message,
-
-  codeBlock = require("../../helpers").codeBlock,
-
-  RuleTester = require("eslint").RuleTester;
-
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
-
+var rule = require('../../../lib/rules/no-const-outside-module-scope');
+var MESSAGE = require('../../../lib/rules/no-const-outside-module-scope').meta.message;
+var codeBlock = require('../../helpers').codeBlock;
+var RuleTester = require('eslint').RuleTester;
 var ruleTester = new RuleTester();
-ruleTester.run("no-const-outside-module-scope", rule, {
 
+ruleTester.run('no-const-outside-module-scope', rule, {
   valid: [
     {
       code: codeBlock([
-        "const foo = 'blah';",
-        "export const bar = 'derp';",
-        "function something() {",
-        "  let hey = 'you!';",
-        "}"
+        'const foo = "blah";',
+        'export const bar = "derp";',
+        'function something() {',
+        '  let hey = "you!";',
+        '}'
       ]),
       parserOptions: {
         ecmaVersion: 6,
         sourceType: 'module'
-      },
+      }
     }
   ],
-
   invalid: [
     {
-      code: "if (true) { const foo = 'bar'; }",
+      code: 'if (true) { const foo = "bar"; }',
       parserOptions: { ecmaVersion: 6 },
       errors: [{
         message: MESSAGE,
-        type: "VariableDeclaration"
+        type: 'VariableDeclaration'
       }]
     },
     {
-      code: "function something() { const foo = 'bar'; }",
+      code: 'function something() { const foo = "bar"; }',
       parserOptions: { ecmaVersion: 6 },
       errors: [{
         message: MESSAGE,
-        type: "VariableDeclaration"
+        type: 'VariableDeclaration'
       }]
     }
   ]
