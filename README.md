@@ -77,7 +77,7 @@ A list of custom rules and documentation can be found [here](docs/rules).
 
 ## Development
 
-The provided [Yeoman generator](https://github.com/eslint/generator-eslint) should be used for creating rules.  In doing do, each rule will have a rule, documentation and test file created automatically.  All rules should be tested!
+The provided [Yeoman generator](https://github.com/eslint/generator-eslint) should be used for creating rules.  In doing so, each rule will have a rule, documentation and test file created automatically.  All rules should be tested!
 
 Tests can be run using `npm test`.  Additionally, [AST Explorer](https://astexplorer.net/) is a great way to look into the structure of a node to determine what to expect.
 
