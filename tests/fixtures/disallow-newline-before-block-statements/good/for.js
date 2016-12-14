@@ -1,3 +1,3 @@
-if (cond) {
-  foo();
+for (let e in elements) {
+  bar(e);
 }
