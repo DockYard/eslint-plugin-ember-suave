@@ -1,3 +1,3 @@
-/* eslint-disable ember-suave/no-direct-property-access, ember-suave/prefer-destructuring */
+/* eslint-disable ember-suave/no-direct-property-access, prefer-destructuring */
 const isNone = Ember.isNone;
-/* eslint-enable ember-suave/no-direct-property-access, ember-suave/prefer-destructuring */
+/* eslint-enable ember-suave/no-direct-property-access, prefer-destructuring */
