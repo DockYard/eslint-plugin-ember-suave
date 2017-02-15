@@ -24,6 +24,7 @@ module.exports = {
     'prefer-destructuring': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
+    'eol-last': ['error', 'always'],
 
     // Overrides for Ember
     'new-cap': ['error', {
