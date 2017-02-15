@@ -28,7 +28,7 @@ module.exports = {
     'new-cap': ['error'],
     'no-empty': ['error'],
     'no-multiple-empty-lines': ['error', { 'max': 1 }],
-    'no-spaced-func': 'error',
+    'func-call-spacing': 'error',
     'no-trailing-spaces': 'error',
     'no-useless-concat': 'error',
     'object-curly-spacing': ['error', 'always'],
