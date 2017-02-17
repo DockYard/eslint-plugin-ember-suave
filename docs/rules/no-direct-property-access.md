@@ -26,9 +26,9 @@ The only configuration option is an array of variables to require destructuring 
 
 ```json
 {
-    "rules": {
-        "no-direct-property-access": ["error", ["Ember", "DS"]]
-    }
+  "rules": {
+    "no-direct-property-access": ["error", ["Ember", "DS"]]
+  }
 }
 ```
 
@@ -36,8 +36,8 @@ If you, for example, do not want to protect `DS`, or have another library that y
 
 ```json
 {
-    "rules": {
-        "no-direct-property-access": ["error", ["Ember", "Mirage"]]
-    }
+  "rules": {
+    "no-direct-property-access": ["error", ["Ember", "Mirage"]]
+  }
 }
 ```
