@@ -22,6 +22,14 @@ Next, install the [ember-cli-eslint](https://github.com/ember-cli/ember-cli-esli
 ember install ember-cli-eslint
 ```
 
+### Upgrading from ember-suave
+
+If you are upgrading from [ember-suave](https://github.com/DockYard/ember-suave) you will have to make sure that you remove the addon from your project. Otherwise you will have two linters running.
+
+```bash
+npm uninstall --save-dev ember-suave
+```
+
 ### Configuration
 
 The `ember-cli-eslint` addon blueprint generates a `.eslintrc.js` configuration file at the root of the project. By default, it is set to extend ESLint's recommended subset of [core linting rules](http://eslint.org/docs/rules/).
