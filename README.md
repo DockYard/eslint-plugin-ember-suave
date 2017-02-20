@@ -71,6 +71,22 @@ module.exports = {
 };
 ```
 
+The custom rule `prefer-destucturing` also supports the configuration `object` and `array` and takes a boolean value. This allows disabling a subset of the rule, if desired.
+
+```js
+// .eslintrc.js
+
+module.exports = {
+  // ...
+  rules: {
+    'ember-suave/prefer-destucturing': ['error', {
+      array: false,
+      object: true
+    }]
+  }
+};
+```
+
 ## Working with Editors and the CLI
 
 If you use ESLint in an editor or from the command line, you'll need to install `eslint-plugin-ember-suave` globally too.
