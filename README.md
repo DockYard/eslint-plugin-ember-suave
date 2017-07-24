@@ -1,6 +1,6 @@
-# eslint-plugin-ember-suave
+# eslint-plugin-ember-suave [![Build Status](https://travis-ci.org/DockYard/eslint-plugin-ember-suave.svg?branch=master)](https://travis-ci.org/DockYard/eslint-plugin-ember-suave)
 
-[![Build Status](https://travis-ci.org/DockYard/eslint-plugin-ember-suave.svg?branch=master)](https://travis-ci.org/DockYard/eslint-plugin-ember-suave)
+**[eslint-plugin-ember-suave is built and maintained by DockYard, contact us for expert Ember.js consulting](https://dockyard.com/ember-consulting)**.
 
 This ESLint plugin exports custom linting rules and a `recommended` configuration based on [DockYard's styleguide](https://github.com/DockYard/styleguides/tree/master/engineering). It is tailored for Ember apps specifically, and may be used in conjunction with [ember-cli-eslint](https://github.com/ember-cli/ember-cli-eslint), or with the ESLint [CLI](http://eslint.org/docs/user-guide/command-line-interface).
 
