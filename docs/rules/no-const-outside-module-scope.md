@@ -11,14 +11,14 @@ A good, brief explanation is below:
 
 ## Rule Details
 
-The following patterns are considered warnings:
+The following patterns are good:
 
 ```javascript
 const FOO = 'FOO';
 export const BAR = 'BAR';
 ```
 
-The following patterns are not warnings:
+The following patterns are bad:
 
 ```javascript
 function derp() {
