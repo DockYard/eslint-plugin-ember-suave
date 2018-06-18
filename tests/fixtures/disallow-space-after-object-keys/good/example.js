@@ -2,7 +2,7 @@
 let x = { a: 1 };
 
 // Method shorthand
-let x = {
+let y = {
   foo() {
     console.log('foo');
   }

@@ -7,9 +7,6 @@ module.exports = {
   env: {
     'browser': true
   },
-  plugins: [
-    'ember-suave'
-  ],
   extends: require.resolve('./base.js'),
   rules: {
     // ES6

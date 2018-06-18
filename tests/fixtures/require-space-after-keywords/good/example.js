@@ -12,7 +12,7 @@ if (true) {
   console.log(false);
 }
 
-switch (x) {
+switch (y) {
   case 1:
     console.log(1);
   default:
@@ -29,4 +29,4 @@ function foo() {
   return { a: 'abc' };
 }
 
-console.log(typeof ['a', 'b'] === 'object');
+console.log(typeof['a', 'b'] === 'object');
