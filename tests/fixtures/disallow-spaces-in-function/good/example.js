@@ -4,7 +4,7 @@ let x = {
   }
 };
 
-let x = function a() {
+let y = function a() {
   console.log('foo');
 };
 

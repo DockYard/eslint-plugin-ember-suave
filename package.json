@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "eslint": "^3.0.0",
+    "doctrine": "^2.1.0",
+    "eslint": "^4.19.1",
     "mocha": "^2.5.3",
     "mocha-eslint": "^3.0.1"
   },

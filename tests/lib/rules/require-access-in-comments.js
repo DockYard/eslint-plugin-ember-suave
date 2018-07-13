@@ -4,11 +4,11 @@
  */
 'use strict';
 
-var rule = require('../../../lib/rules/require-access-in-comments');
-var MESSAGE = require('../../../lib/rules/require-access-in-comments').meta.message;
-var codeBlock = require('../../helpers').codeBlock;
-var RuleTester = require('eslint').RuleTester;
-var ruleTester = new RuleTester();
+const rule = require('../../../lib/rules/require-access-in-comments');
+const MESSAGE = require('../../../lib/rules/require-access-in-comments').meta.message;
+const codeBlock = require('../../helpers').codeBlock;
+const RuleTester = require('eslint').RuleTester;
+const ruleTester = new RuleTester();
 
 ruleTester.run('require-access-in-comments', rule, {
   valid: [
@@ -84,6 +84,37 @@ ruleTester.run('require-access-in-comments', rule, {
     {
       code: codeBlock([
         '/**',
+        ' * This thing is public and documented in JSDoc style.',
+        ' *',
+        ' * @public',
+        ' */',
+        'export function doNothingPublicMethod() {',
+        '  /**',
+        '   * This thing is private and documented in JSDoc style.',
+        '   *',
+        '   * @private',
+        '   */',
+        '  function somethingElse() {}',
+        '}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
+        'export function doNothingPublicMethod() {',
+        '  /**',
+        '   * This thing is private and documented in JSDoc style.',
+        '   *',
+        '   * @private',
+        '   */',
+        '  function somethingElse() {}',
+        '}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
+        '/**',
         ' * This thing is public and documented in JSDoc style, with multiple spaces before the annotation.',
         ' *',
         ' *    @public',
@@ -94,9 +125,101 @@ ruleTester.run('require-access-in-comments', rule, {
     },
     {
       code: codeBlock([
+        'export function doNothingPublicMethod() {',
+        '  /**',
+        '   * This thing is private and documented in JSDoc style, with multiple spaces before the annotation.',
+        '   *',
+        '   *    @private',
+        '   */',
+        '  function somethingElse() {}',
+        '}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
         '/*',
         ' Some non documentation block, nothing to see here.',
         '*/'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
+        '/**',
+        ' * This function declaration is public and documented in JSDoc style.',
+        ' *',
+        ' * @public',
+        ' */',
+        'function someAnotherPublicThing() {}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
+        '/**',
+        ' * This function expression is public and documented in JSDoc style.',
+        ' *',
+        ' * @public',
+        ' */',
+        'let someAnotherPublicThing = function() {}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
+        '/**',
+        ' * This arrow function is public and documented in JSDoc style.',
+        ' *',
+        ' * @public',
+        ' */',
+        'let someAnotherPublicThing = () => {}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
+        '/**',
+        ' * This arrow function is public and documented in JSDoc style.',
+        ' *',
+        ' * @public',
+        ' */',
+        'someAnotherPublicThing(() => {})'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
+        '/**',
+        ' * This class declaration is public and documented in JSDoc style.',
+        ' *',
+        ' * @public',
+        ' */',
+        'class someAnotherPublicThing {}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
+        '/**',
+        ' * This class expression is public and documented in JSDoc style.',
+        ' *',
+        ' * @public',
+        ' */',
+        'let someAnotherPublicThing = class {}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' }
+    },
+    {
+      code: codeBlock([
+        'export function doNothingPublicMethod() {',
+        '  /**',
+        '   * This thing is private and documented in JSDoc style.',
+        '   *',
+        '   * @private',
+        '   */',
+        '  let somethingElse = () => {}',
+        '}'
       ]),
       parserOptions: { ecmaVersion: 6, sourceType: 'module' }
     }
@@ -152,6 +275,61 @@ ruleTester.run('require-access-in-comments', rule, {
       ]),
       parserOptions: { ecmaVersion: 6, sourceType: 'module' },
       errors: [{
+        message: MESSAGE,
+        type: 'Block'
+      }]
+    },
+    {
+      code: codeBlock([
+        'export function doNothingPublicMethod() {',
+        '  /**',
+        '   * Internal private method without access documented.',
+        '   */',
+        '  function somethingElse() {}',
+        '}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' },
+      errors: [{
+        message: MESSAGE,
+        type: 'Block'
+      }]
+    },
+    {
+      code: codeBlock([
+        '/**',
+        '* Public method with access documented using `*` prefix comment syntax.',
+        '* @public',
+        '*/',
+        'export function doNothingPublicMethod() {',
+        '  /**',
+        '   * Internal private method without access documented.',
+        '   */',
+        '  function somethingElse() {}',
+        '}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' },
+      errors: [{
+        message: MESSAGE,
+        type: 'Block'
+      }]
+    },
+    {
+      code: codeBlock([
+        '/**',
+        '* Public method without access documented using `*` prefix comment syntax.',
+        '*/',
+        'export function doNothingPublicMethod() {',
+        '  /**',
+        '   * Internal private method without access documented.',
+        '   */',
+        '  function somethingElse() {}',
+        '}'
+      ]),
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' },
+      errors: [{
+        message: MESSAGE,
+        type: 'Block'
+      }, {
         message: MESSAGE,
         type: 'Block'
       }]
