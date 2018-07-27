@@ -18,7 +18,7 @@ module.exports = {
     'no-var': 'error',
     'no-useless-rename': 'error',
     'object-shorthand': ['error', 'always'],
-    'prefer-destructuring': 'error',
+    'prefer-destructuring': ['error', { array: false, object: true }, { enforceForRenamedProperties: false }],
     'prefer-spread': 'error',
     'prefer-template': 'error',
     'eol-last': ['error', 'always'],

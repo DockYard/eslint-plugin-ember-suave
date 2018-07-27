@@ -1,4 +1,3 @@
-/* eslint-disable prefer-destructuring */
 let { foo } = SomeThing;
 let { bar } = SomeThing.Baz;
 
@@ -8,4 +7,7 @@ const { get } = SomeThing;
 const { set } = SomeThing;
 
 const { val } = SomeThing['some.key'];
-/* eslint-enable prefer-destructuring */
+
+let arr = [1, 2, 3, 4];
+let [one] = arr;
+let alsoOne = arr[0];
