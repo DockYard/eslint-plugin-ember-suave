@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     // ES6
     'arrow-parens': ['error', 'always'],
+    eqeqeq: ['error', 'smart'],
     'generator-star-spacing': ['error', {
       'before': false,
       'after': true
