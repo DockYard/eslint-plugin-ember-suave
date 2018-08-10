@@ -12,7 +12,8 @@ describe('plugin:ember-suave/recommended', function() {
   before(function() {
     cli = new CLIEngine({
       useEslintrc: false,
-      configFile: path.resolve(__dirname, '../../config/recommended.js')
+      configFile: path.resolve(__dirname, '../../config/recommended.js'),
+      parser: 'babel-eslint'
     });
 
     var rulesDir = path.resolve(__dirname, '../../lib/rules');
