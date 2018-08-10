@@ -1,3 +1,3 @@
 async function a() {
-    return await fetch('https://example.com');
+  return await fetch('https://example.com');
 }
