@@ -9,9 +9,11 @@ module.exports = {
   },
   extends: require.resolve('./base.js'),
   rules: {
+    // General
+    eqeqeq: ['error', 'smart'],
+
     // ES6
     'arrow-parens': ['error', 'always'],
-    eqeqeq: ['error', 'smart'],
     'generator-star-spacing': ['error', {
       'before': false,
       'after': true
