@@ -18,6 +18,7 @@ module.exports = {
       'before': false,
       'after': true
     }],
+    'no-duplicate-imports': 'error',
     'no-var': 'error',
     'no-return-await': 'error',
     'no-useless-rename': 'error',
