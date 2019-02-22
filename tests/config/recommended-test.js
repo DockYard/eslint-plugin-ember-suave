@@ -19,6 +19,7 @@ describe('plugin:ember-suave/recommended', function() {
     var rulesDir = path.resolve(__dirname, '../../lib/rules');
     var rules = requireIndex(rulesDir);
     cli.addPlugin('eslint-plugin-ember-suave', { rules: rules });
+    cli.addPlugin('eslint-plugin-import', require('eslint-plugin-import'));
   });
 
   var fixturesDir = path.resolve(__dirname, '../fixtures');

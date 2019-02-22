@@ -4,6 +4,9 @@ module.exports = {
     ecmaVersion: 6,
     sourceType: 'module'
   },
+  plugins: [
+    'import'
+  ],
   env: {
     'browser': true
   },
@@ -28,6 +31,8 @@ module.exports = {
     'prefer-spread': 'error',
     'prefer-template': 'error',
     'sort-imports': 'error',
+
+    'import/no-relative-parent-imports': 'error',
 
     // Overrides for Ember
     'new-cap': ['error', {
