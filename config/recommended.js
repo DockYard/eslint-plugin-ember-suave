@@ -4,6 +4,9 @@ module.exports = {
     ecmaVersion: 6,
     sourceType: 'module'
   },
+  plugins: [
+    'ember'
+  ],
   env: {
     'browser': true
   },
@@ -32,10 +35,12 @@ module.exports = {
       'capIsNewExceptions': ['A']
     }],
 
+    // Eslint ember
+    'ember/new-module-imports': 'error',
+
     // Custom rules
     'ember-suave/no-const-outside-module-scope': 'error',
     'ember-suave/no-direct-property-access': 'error',
-    'ember-suave/require-access-in-comments': 'error',
-    'ember-suave/require-const-for-ember-properties': 'error'
+    'ember-suave/require-access-in-comments': 'error'
   }
 };
