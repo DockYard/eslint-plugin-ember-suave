@@ -5,6 +5,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
+    'import',
     'ember'
   ],
   env: {
@@ -17,10 +18,12 @@ module.exports = {
 
     // ES6
     'arrow-parens': ['error', 'always'],
+    'eol-last': ['error', 'always'],
     'generator-star-spacing': ['error', {
       'before': false,
       'after': true
     }],
+    'no-duplicate-imports': 'error',
     'no-await-in-loop': 'error',
     'no-var': 'error',
     'no-return-await': 'error',
@@ -29,7 +32,9 @@ module.exports = {
     'prefer-destructuring': ['error', { array: false, object: true }, { enforceForRenamedProperties: false }],
     'prefer-spread': 'error',
     'prefer-template': 'error',
-    'eol-last': ['error', 'always'],
+    'sort-imports': 'error',
+
+    'import/no-relative-parent-imports': 'error',
 
     // Overrides for Ember
     'new-cap': ['error', {
