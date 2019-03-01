@@ -5,7 +5,8 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'import'
+    'import',
+    'ember'
   ],
   env: {
     'browser': true
@@ -23,6 +24,7 @@ module.exports = {
       'after': true
     }],
     'no-duplicate-imports': 'error',
+    'no-await-in-loop': 'error',
     'no-var': 'error',
     'no-return-await': 'error',
     'no-useless-rename': 'error',
@@ -39,10 +41,12 @@ module.exports = {
       'capIsNewExceptions': ['A']
     }],
 
+    // Eslint ember
+    'ember/new-module-imports': 'error',
+
     // Custom rules
     'ember-suave/no-const-outside-module-scope': 'error',
     'ember-suave/no-direct-property-access': 'error',
-    'ember-suave/require-access-in-comments': 'error',
-    'ember-suave/require-const-for-ember-properties': 'error'
+    'ember-suave/require-access-in-comments': 'error'
   }
 };
