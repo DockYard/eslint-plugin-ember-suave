@@ -21,6 +21,7 @@ module.exports = {
       'before': false,
       'after': true
     }],
+    'no-await-in-loop': 'error',
     'no-var': 'error',
     'no-return-await': 'error',
     'no-useless-rename': 'error',
