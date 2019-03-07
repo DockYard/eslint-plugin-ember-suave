@@ -16,6 +16,11 @@
       "name": "Robert Wagner",
       "email": "rwwagner90@gmail.com",
       "url": "https://github.com/rwwagner90"
+    },
+    {
+      "name": "Sergio Arbeo",
+      "email": "sergio.arbeo@dockyard.com",
+      "url": "https://github.com/Serabe"
     }
   ],
   "license": "MIT",
@@ -26,14 +31,14 @@
   "dependencies": {
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-ember": "^6.2.0",
-    "requireindex": "~1.1.0"
+    "requireindex": "~1.2.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "doctrine": "^2.1.0",
+    "chai": "^4.2.0",
+    "doctrine": "^3.0.0",
     "eslint": "^5.15.1",
-    "mocha": "^4.0.1",
-    "mocha-eslint": "^4.1.0"
+    "mocha": "^6.0.2",
+    "mocha-eslint": "^5.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
