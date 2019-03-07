@@ -13,7 +13,10 @@ describe('plugin:ember-suave/recommended', function() {
     cli = new CLIEngine({
       useEslintrc: false,
       configFile: path.resolve(__dirname, '../../config/recommended.js'),
-      parser: 'babel-eslint'
+      ignore: false,
+      parserOptions: {
+        ecmaVersion: 2019
+      }
     });
 
     var rulesDir = path.resolve(__dirname, '../../lib/rules');
