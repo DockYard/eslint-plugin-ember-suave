@@ -1,6 +1,6 @@
-var lint = require('mocha-eslint');
+const lint = require('mocha-eslint');
 
-var paths = [
+const paths = [
   'config',
   'lib/**/*.js',
   'tests/**/*.js',
