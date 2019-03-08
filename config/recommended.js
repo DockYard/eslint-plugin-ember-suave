@@ -23,6 +23,7 @@ module.exports = {
       'before': false,
       'after': true
     }],
+    'no-async-promise-executor': 'error',
     'no-duplicate-imports': 'error',
     'no-await-in-loop': 'error',
     'no-var': 'error',
