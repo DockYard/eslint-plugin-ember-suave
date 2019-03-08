@@ -4,22 +4,19 @@
  */
 'use strict';
 
-var rule = require('../../../lib/rules/no-const-outside-module-scope');
-var MESSAGE = require('../../../lib/rules/no-const-outside-module-scope').meta.message;
-var codeBlock = require('../../helpers').codeBlock;
-var RuleTester = require('eslint').RuleTester;
-var ruleTester = new RuleTester();
+const rule = require('../../../lib/rules/no-const-outside-module-scope');
+const { message } = require('../../../lib/rules/no-const-outside-module-scope').meta;
+const { RuleTester } = require('eslint');
+const ruleTester = new RuleTester();
 
 ruleTester.run('no-const-outside-module-scope', rule, {
   valid: [
     {
-      code: codeBlock([
-        'const foo = "blah";',
-        'export const bar = "derp";',
-        'function something() {',
-        '  let hey = "you!";',
-        '}'
-      ]),
+      code: `const foo = "blah";
+export const bar = "derp";
+function something() {
+  let hey = "you!";
+}`,
       parserOptions: {
         ecmaVersion: 6,
         sourceType: 'module'
@@ -31,7 +28,7 @@ ruleTester.run('no-const-outside-module-scope', rule, {
       code: 'if (true) { const foo = "bar"; }',
       parserOptions: { ecmaVersion: 6 },
       errors: [{
-        message: MESSAGE,
+        message,
         type: 'VariableDeclaration'
       }]
     },
@@ -39,7 +36,7 @@ ruleTester.run('no-const-outside-module-scope', rule, {
       code: 'function something() { const foo = "bar"; }',
       parserOptions: { ecmaVersion: 6 },
       errors: [{
-        message: MESSAGE,
+        message,
         type: 'VariableDeclaration'
       }]
     }

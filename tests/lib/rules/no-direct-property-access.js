@@ -4,9 +4,9 @@
  */
 'use strict';
 
-var rule = require('../../../lib/rules/no-direct-property-access');
-var RuleTester = require('eslint').RuleTester;
-var ruleTester = new RuleTester();
+const rule = require('../../../lib/rules/no-direct-property-access');
+const { RuleTester } = require('eslint');
+const ruleTester = new RuleTester();
 
 ruleTester.run('no-direct-property-access', rule, {
   valid: [
