@@ -7,26 +7,19 @@ const rule = require('../../../lib/rules/lines-between-object-properties');
 const { RuleTester } = require('eslint');
 const ruleTester = new RuleTester();
 
-const defaultOptions = {
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module'
-  }
-};
+const parserOptions = { ecmaVersion: 2018, sourceType: 'module' };
 
-const errors = {
-  errors: [
-    {
-      message: rule.meta.messages.always,
-      type: 'Property'
-    }
-  ]
-};
+const errors = [
+  {
+    message: rule.meta.messages.always,
+    type: 'Property'
+  }
+];
 
 ruleTester.run('lines-between-object-properties', rule, {
   valid: [
     {
-      ...defaultOptions,
+      parserOptions,
       options: ['always', { exceptAfterSingleLine: false }],
       code: `const a = {
   a: 1,
@@ -35,7 +28,7 @@ ruleTester.run('lines-between-object-properties', rule, {
 };`
     },
     {
-      ...defaultOptions,
+      parserOptions,
       options: ['always', { exceptAfterSingleLine: false }],
       code: `const a = {
   a: 1,
@@ -50,7 +43,7 @@ ruleTester.run('lines-between-object-properties', rule, {
 };`
     },
     {
-      ...defaultOptions,
+      parserOptions,
       options: ['always', { exceptAfterSingleLine: false }],
       code: `const a = {};
 const b = {
@@ -62,7 +55,7 @@ const b = {
 };`
     },
     {
-      ...defaultOptions,
+      parserOptions,
       options: ['always', { exceptAfterSingleLine: true }],
       code: `const a = {
   a: 1,
@@ -70,7 +63,7 @@ const b = {
 };`
     },
     {
-      ...defaultOptions,
+      parserOptions,
       options: ['always', { exceptAfterSingleLine: true }],
       code: `const a = {
   a: 1,
@@ -84,7 +77,7 @@ const b = {
 };`
     },
     {
-      ...defaultOptions,
+      parserOptions,
       options: ['always', { exceptAfterSingleLine: true }],
       code: `const a = {};
 const b = {
@@ -95,7 +88,7 @@ const b = {
 };`
     },
     {
-      ...defaultOptions,
+      parserOptions,
       options: ['never'],
       code: `const a = {
   a: 1,
@@ -110,8 +103,8 @@ const b = {
   ],
   invalid: [
     {
-      ...defaultOptions,
-      ...errors,
+      parserOptions,
+      errors,
       options: ['always'],
       code: `const a = {
   a() {
@@ -123,8 +116,8 @@ const b = {
 };`
     },
     {
-      ...defaultOptions,
-      ...errors,
+      parserOptions,
+      errors,
       options: ['always', { exceptAfterSingleLine: false }],
       code: `const a = {
   c: 1,
@@ -138,8 +131,8 @@ const b = {
 };`
     },
     {
-      ...defaultOptions,
-      ...errors,
+      parserOptions,
+      errors,
       options: ['always', { exceptAfterSingleLine: false }],
       code: `const a = {
   ...c,
@@ -153,7 +146,7 @@ const b = {
 };`
     },
     {
-      ...defaultOptions,
+      parserOptions,
       errors: [
         {
           message: rule.meta.messages.never,
