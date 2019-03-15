@@ -30,6 +30,10 @@ module.exports = {
     'no-return-await': 'error',
     'no-useless-rename': 'error',
     'object-shorthand': ['error', 'always'],
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: 'multiline-block-like', next: '*' }
+    ],
     'prefer-destructuring': ['error', { array: false, object: true }, { enforceForRenamedProperties: false }],
     'prefer-spread': 'error',
     'prefer-template': 'error',
