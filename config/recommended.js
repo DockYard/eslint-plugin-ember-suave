@@ -50,6 +50,7 @@ module.exports = {
     'ember/new-module-imports': 'error',
 
     // Custom rules
+    'ember-suave/lines-between-object-properties': ['error', 'always', { exceptAfterSingleLine: true }],
     'ember-suave/no-const-outside-module-scope': 'error',
     'ember-suave/no-direct-property-access': 'error',
     'ember-suave/require-access-in-comments': 'error'
