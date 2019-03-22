@@ -24,6 +24,7 @@ module.exports = {
       'after': true
     }],
     'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: false }],
+    'no-async-promise-executor': 'error',
     'no-duplicate-imports': 'error',
     'no-await-in-loop': 'error',
     'no-var': 'error',
