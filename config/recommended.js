@@ -23,6 +23,7 @@ module.exports = {
       'before': false,
       'after': true
     }],
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: false }],
     'no-async-promise-executor': 'error',
     'no-duplicate-imports': 'error',
     'no-await-in-loop': 'error',
@@ -30,6 +31,10 @@ module.exports = {
     'no-return-await': 'error',
     'no-useless-rename': 'error',
     'object-shorthand': ['error', 'always'],
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: 'multiline-block-like', next: '*' }
+    ],
     'prefer-destructuring': ['error', { array: false, object: true }, { enforceForRenamedProperties: false }],
     'prefer-spread': 'error',
     'prefer-template': 'error',
@@ -46,6 +51,7 @@ module.exports = {
     'ember/new-module-imports': 'error',
 
     // Custom rules
+    'ember-suave/lines-between-object-properties': ['error', 'always', { exceptAfterSingleLine: true }],
     'ember-suave/no-const-outside-module-scope': 'error',
     'ember-suave/no-direct-property-access': 'error',
     'ember-suave/require-access-in-comments': 'error'
