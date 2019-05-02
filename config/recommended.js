@@ -38,7 +38,6 @@ module.exports = {
     'prefer-destructuring': ['error', { array: false, object: true }, { enforceForRenamedProperties: false }],
     'prefer-spread': 'error',
     'prefer-template': 'error',
-    'sort-imports': 'error',
 
     'import/no-relative-parent-imports': 'error',
 
