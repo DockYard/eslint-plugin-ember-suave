@@ -34,20 +34,25 @@ npm uninstall --save-dev ember-suave
 
 The `ember-cli-eslint` addon blueprint generates a `.eslintrc.js` configuration file at the root of the project. By default, it is set to extend ESLint's recommended subset of [core linting rules](http://eslint.org/docs/rules/).
 
-Add the plugin's
-[`recommended`](https://github.com/DockYard/eslint-plugin-ember-suave/blob/master/config/recommended.js) configuration to the list of extensions:
+Add the _plugin_ and its
+[`recommended`](https://github.com/DockYard/eslint-plugin-ember-suave/blob/master/config/recommended.js) configuration to the list of _extensions_:
 
 ```js
 // .eslintrc.js
 
 module.exports = {
   // ...
+  plugins: [
+    'ember',
+    'ember-suave'
+  ],
   extends: [
     'eslint:recommended',
     'plugin:ember-suave/recommended'
   ],
   rules: {
   }
+  // ...
 };
 ```
 
@@ -60,6 +65,10 @@ Both core rules (provided by ESLint) and custom rules (prefixed by `ember-suave/
 
 module.exports = {
   // ...
+  plugins: [
+    'ember',
+    'ember-suave'
+  ],
   extends: [
     'eslint:recommended',
     'plugin:ember-suave/recommended'
