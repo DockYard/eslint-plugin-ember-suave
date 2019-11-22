@@ -29,7 +29,7 @@
     "test": "mocha tests tests/lib/rules/*.js tests/**/*-test.js"
   },
   "dependencies": {
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-ember": "^6.4.1",
     "requireindex": "~1.2.0"
   },
@@ -37,8 +37,8 @@
     "chai": "^4.2.0",
     "doctrine": "^3.0.0",
     "eslint": "^5.16.0",
-    "mocha": "^6.1.4",
-    "mocha-eslint": "^5.0.0"
+    "mocha": "^6.2.2",
+    "mocha-eslint": "^6.0.0"
   },
   "engines": {
     "node": ">=8.0.0"
