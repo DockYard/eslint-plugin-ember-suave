@@ -14,6 +14,7 @@ describe('plugin:ember-suave/recommended', function() {
       useEslintrc: false,
       configFile: path.resolve(__dirname, '../../config/recommended.js'),
       ignore: false,
+      plugins: ['ember-suave', 'import'],
       parserOptions: {
         ecmaVersion: 2019
       }
@@ -21,8 +22,8 @@ describe('plugin:ember-suave/recommended', function() {
 
     let rulesDir = path.resolve(__dirname, '../../lib/rules');
     let rules = requireIndex(rulesDir);
-    cli.addPlugin('eslint-plugin-ember-suave', { rules: rules });
-    cli.addPlugin('eslint-plugin-import', require('eslint-plugin-import'));
+    cli.addPlugin('ember-suave', { rules: rules });
+    cli.addPlugin('import', require('eslint-plugin-import'));
   });
 
   let fixturesDir = path.resolve(__dirname, '../fixtures');
