@@ -7,6 +7,10 @@
     "eslintplugin",
     "eslint-plugin"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DockYard/eslint-plugin-ember-suave.git"
+  },
   "author": "DockYard <oss@dockyard.com>",
   "contributors": [
     {
