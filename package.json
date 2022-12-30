@@ -41,7 +41,7 @@
     "chai": "^4.2.0",
     "doctrine": "^3.0.0",
     "eslint": "^6.6.0",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "mocha-eslint": "^6.0.0"
   },
   "engines": {
